@@ -3,127 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us | Repoyler</title>
-
-  <!-- Google Fonts -->
+  <title>About | Repoyler</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
-
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
-      background-color: #f5f7fa;
-      color: #333;
+      background: #f9fafb;
+      color: #1e293b;
     }
-
     header {
-      background-color: #0f172a;
-      padding: 20px 40px;
+      background-color: #1e3a8a;
       color: white;
+      padding: 16px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-
+    nav {
+      background-color: #3b82f6;
+      display: flex;
+      justify-content: space-around;
+      padding: 12px;
+    }
     nav a {
       color: white;
-      margin: 0 15px;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
+      padding: 8px 12px;
     }
-
-    .about-container {
+    section {
       padding: 40px 20px;
-      max-width: 1000px;
+      max-width: 800px;
       margin: auto;
-    }
-
-    .about-title {
       text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-      color: #1e3a8a;
     }
-
-    .profile-card {
-      display: flex;
-      align-items: center;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-      padding: 20px;
-      margin-bottom: 30px;
-    }
-
-    .profile-card img {
+    img {
       width: 120px;
       height: 120px;
       object-fit: cover;
       border-radius: 50%;
-      margin-right: 30px;
+      margin-top: 10px;
     }
-
-    .profile-info h2 {
-      margin: 0;
-      font-size: 1.5rem;
-      color: #1e3a8a;
-    }
-
-    .profile-info p {
-      margin: 5px 0 0;
-      font-size: 1rem;
-      color: #555;
-    }
-
-    @media (max-width: 768px) {
-      .profile-card {
-        flex-direction: column;
-        text-align: center;
-      }
-      .profile-card img {
-        margin-bottom: 15px;
-        margin-right: 0;
-      }
+    .profile {
+      margin-bottom: 30px;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <div><strong>Repoyler</strong></div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="courses.html">Courses</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <h1>Repoyler</h1>
 </header>
 
-<main class="about-container">
-  <h1 class="about-title">Meet Our Team</h1>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="courses.html">Courses</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-  <!-- CEO -->
-  <div class="profile-card">
-    <img src="WhatsApp Image 2025-05-02 at 00.52.48.jpeg" alt="Kazi Imran Ali">
-    <div class="profile-info">
-      <h2>Kazi Imran Ali</h2>
-      <p>Chief Executive Officer (CEO)</p>
-    </div>
-  </div>
+<section>
+  <h2>About Repoyler</h2>
+  <p>Repoyler is a platform offering high-quality digital courses to help you grow in your career and passions.</p>
 
-  <!-- Lead Developer -->
-  <div class="profile-card">
+  <div class="profile">
+    <h3>Lead Developer</h3>
+    <p>KUSHAL CHAKRABORTY</p>
     <img src="WhatsApp Image 2025-05-02 at 01.23.51.jpeg" alt="Kushal Chakraborty">
-    <div class="profile-info">
-      <h2>Kushal Chakraborty</h2>
-      <p>Lead Developer</p>
-    </div>
   </div>
 
-</main>
+  <div class="profile">
+    <h3>CEO</h3>
+    <p>KAZI IMRAN ALI</p>
+    <img src="WhatsApp Image 2025-05-02 at 00.52.48.jpeg" alt="Kazi Imran Ali">
+  </div>
+</section>
 
 </body>
 </html>

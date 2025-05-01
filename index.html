@@ -1,194 +1,278 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Repoyler | Home</title>
-
-  <!-- Google Fonts -->
+  <title>Repoyler - Learn Better</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
-
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #1e293b;
+      --accent-color: #3b82f6;
     }
+
+    [data-theme="dark"] {
+      --bg-color: #0f172a;
+      --text-color: #f1f5f9;
+      --accent-color: #60a5fa;
+    }
+
     body {
+      margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #f3f4f6;
-      color: #111827;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
     }
+
     header {
-      background-color: #1e3a8a;
-      padding: 20px 40px;
+      background-color: var(--accent-color);
+      color: white;
+      padding: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 100;
     }
-    .nav-left {
-      font-size: 1.5rem;
-      font-weight: 600;
+
+    header h1 {
+      margin: 0;
+      font-size: 1.6rem;
     }
+
+    nav {
+      background-color: var(--accent-color);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 12px;
+    }
+
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
-      transition: color 0.3s;
+      font-weight: 600;
+      padding: 8px 12px;
+      font-size: 0.95rem;
     }
-    nav a:hover {
-      color: #cbd5e1;
-    }
-    .profile-menu {
-      position: relative;
-      display: inline-block;
-    }
-    .profile-icon {
-      font-size: 1.3rem;
-      cursor: pointer;
-    }
-    .dropdown {
-      display: none;
-      position: absolute;
-      right: 0;
-      background-color: white;
-      color: black;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border-radius: 6px;
-      overflow: hidden;
-      z-index: 1000;
-    }
-    .dropdown a {
-      display: block;
-      padding: 10px 15px;
-      text-decoration: none;
-      color: #1e3a8a;
-      border-bottom: 1px solid #eee;
-    }
-    .dropdown a:hover {
-      background-color: #f0f0f0;
-    }
+
     .hero {
+      padding: 60px 20px;
       text-align: center;
-      padding: 80px 20px;
-      background: linear-gradient(to right, #3b82f6, #60a5fa);
+      background: linear-gradient(to right, var(--accent-color), #1e40af);
       color: white;
     }
-    .hero h1 {
-      font-size: 2.8rem;
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .quote-section {
+      background: #f1f5f9;
+      padding: 30px 20px;
+      text-align: center;
+      font-style: italic;
+    }
+
+    .quote-section p {
+      font-size: 1.2rem;
+      color: #475569;
+    }
+
+    .features, .why-section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .features h3,
+    .why-section h3 {
       margin-bottom: 20px;
     }
-    .hero p {
-      font-size: 1.2rem;
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      color: var(--text-color);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .why-section ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
       max-width: 600px;
       margin: auto;
     }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .feature-box {
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      text-align: center;
-    }
-    .feature-box i {
-      font-size: 2rem;
-      color: #1e3a8a;
+
+    .why-section ul li {
       margin-bottom: 10px;
-    }
-    .feature-box h3 {
-      margin-bottom: 10px;
-    }
-    footer {
-      background-color: #1e293b;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 60px;
+      font-size: 1rem;
     }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2rem;
+    .theme-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      padding: 12px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    .profile {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      position: absolute;
+      right: 0;
+      top: 40px;
+      background: white;
+      color: black;
+      padding: 10px;
+      display: none;
+      flex-direction: column;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .dropdown a {
+      color: black;
+      text-decoration: none;
+      padding: 8px 12px;
+    }
+
+    .profile:hover .dropdown {
+      display: flex;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      background-color: #e2e8f0;
+      color: #334155;
+    }
+
+    @media (min-width: 600px) {
+      .cards {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .card {
+        width: 200px;
+      }
+
+      .why-section ul {
+        text-align: center;
       }
     }
   </style>
-
-  <script>
-    function toggleDropdown() {
-      const dropdown = document.getElementById("dropdown");
-      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-    }
-
-    window.addEventListener('click', function(e) {
-      if (!e.target.matches('.profile-icon')) {
-        const dropdown = document.getElementById("dropdown");
-        if (dropdown) dropdown.style.display = "none";
-      }
-    });
-  </script>
 </head>
 <body>
 
 <header>
-  <div class="nav-left">Repoyler</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="courses.html">Courses</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="profile-menu">
-    <i class="fas fa-user-circle profile-icon" onclick="toggleDropdown()"></i>
-    <div class="dropdown" id="dropdown">
+  <h1>Repoyler</h1>
+  <div class="profile">
+    <i class="fas fa-user-circle fa-2x"></i>
+    <div class="dropdown">
       <a href="login.html">Login</a>
       <a href="signup.html">Sign Up</a>
     </div>
   </div>
 </header>
 
+<nav>
+  <a href="index.html">Home</a>
+  <a href="courses.html">Courses</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
 <section class="hero">
-  <h1>Master Digital Skills with Repoyler</h1>
-  <p>Learn Web Development, UI/UX, Marketing, and More with Expert-Guided Courses.</p>
+  <h2>Learn From The Best</h2>
+  <p>Access high-quality digital courses, anytime, anywhere, and boost your skills today with Repoyler.</p>
+</section>
+
+<section class="quote-section">
+  <p>“Education is the most powerful weapon which you can use to change the world.” – Nelson Mandela</p>
 </section>
 
 <section class="features">
-  <div class="feature-box">
-    <i class="fas fa-code"></i>
-    <h3>Web Development</h3>
-    <p>Become a full-stack pro with HTML, CSS, JavaScript, and backend skills.</p>
+  <h3>What You'll Get</h3>
+  <div class="cards">
+    <div class="card">
+      <i class="fas fa-laptop-code fa-2x"></i>
+      <h4>Practical Courses</h4>
+      <p>Learn by doing with hands-on projects and real-world examples.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-certificate fa-2x"></i>
+      <h4>Certifications</h4>
+      <p>Earn industry-recognized certificates to showcase your skills.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-headset fa-2x"></i>
+      <h4>24/7 Support</h4>
+      <p>We're always here to help you when you need us.</p>
+    </div>
   </div>
-  <div class="feature-box">
-    <i class="fas fa-paint-brush"></i>
-    <h3>UI/UX Design</h3>
-    <p>Master modern design tools and create stunning user experiences.</p>
-  </div>
-  <div class="feature-box">
-    <i class="fas fa-chart-line"></i>
-    <h3>Digital Marketing</h3>
-    <p>Boost brands with SEO, social media, and performance ads training.</p>
-  </div>
+</section>
+
+<section class="why-section">
+  <h3>Why Repoyler?</h3>
+  <ul>
+    <li>🚀 Career-focused content crafted by experts</li>
+    <li>📱 Fully responsive and mobile-ready platform</li>
+    <li>💬 Dedicated community and mentor support</li>
+    <li>🎯 Personalized learning paths for faster growth</li>
+    <li>🛠️ Future-ready tech and continuous updates</li>
+  </ul>
 </section>
 
 <footer>
   &copy; 2025 Repoyler. All rights reserved.
 </footer>
+
+<!-- Theme Toggle -->
+<button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
+<script>
+  function toggleTheme() {
+    const current = document.documentElement.getAttribute("data-theme");
+    const next = current === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+  }
+
+  // Load saved theme
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  }
+</script>
 
 </body>
 </html>
