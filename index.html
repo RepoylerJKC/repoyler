@@ -11,7 +11,11 @@
       margin: 0;
       font-family: 'Poppins', sans-serif;
       color: #ffffff;
-      transition: background-color 3s;
+      background-color: #0ea5e9;
+      transition: background-color 3s linear;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
@@ -48,6 +52,7 @@
     }
 
     section {
+      flex: 1;
       max-width: 1000px;
       margin: auto;
       padding: 20px;
@@ -121,10 +126,10 @@
 </footer>
 
 <script>
-  const colors = ['#0ea5e9', '#3b82f6', '#6366f1', '#10b981', '#f59e0b', '#ef4444'];
+  const colors = ['#0ea5e9', '#3b82f6', '#6366f1', '#10b981', '#f59e0b', '#ef4444', '#ec4899', '#14b8a6'];
   let i = 0;
   setInterval(() => {
-    document.getElementById("body").style.backgroundColor = colors[i];
+    document.body.style.backgroundColor = colors[i];
     i = (i + 1) % colors.length;
   }, 4000);
 </script>
