@@ -1,207 +1,99 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Repoyler - Learn Better</title>
+  <title>Repoyler | Learn & Grow</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
-    :root {
-      --bg-color: #ffffff;
-      --text-color: #1e293b;
-      --accent-color: #3b82f6;
-    }
-
-    [data-theme="dark"] {
-      --bg-color: #0f172a;
-      --text-color: #f1f5f9;
-      --accent-color: #60a5fa;
-    }
-
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      transition: background 0.3s, color 0.3s;
+      color: #ffffff;
+      transition: background-color 3s;
     }
 
     header {
-      background-color: var(--accent-color);
-      color: white;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 30px 10px;
+      text-align: center;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 1.6rem;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
     }
 
     nav {
-      background-color: var(--accent-color);
+      background-color: rgba(0, 0, 0, 0.3);
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
-      justify-content: space-around;
-      padding: 12px;
+      padding: 10px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
+      margin: 10px 15px;
       font-weight: 600;
-      padding: 8px 12px;
-      font-size: 0.95rem;
     }
 
-    .hero {
-      padding: 60px 20px;
-      text-align: center;
-      background: linear-gradient(to right, var(--accent-color), #1e40af);
-      color: white;
+    nav a:hover {
+      text-decoration: underline;
     }
 
-    .hero h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .quote-section {
-      background: #f1f5f9;
-      padding: 30px 20px;
-      text-align: center;
-      font-style: italic;
-    }
-
-    .quote-section p {
-      font-size: 1.2rem;
-      color: #475569;
-    }
-
-    .features, .why-section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .features h3,
-    .why-section h3 {
-      margin-bottom: 20px;
-    }
-
-    .cards {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .card {
-      background-color: white;
-      color: var(--text-color);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .why-section ul {
-      list-style: none;
-      padding: 0;
-      text-align: left;
-      max-width: 600px;
+    section {
+      max-width: 1000px;
       margin: auto;
+      padding: 20px;
+      text-align: center;
     }
 
-    .why-section ul li {
-      margin-bottom: 10px;
-      font-size: 1rem;
+    section h2 {
+      margin-bottom: 15px;
     }
 
-    .theme-toggle {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: var(--accent-color);
-      color: white;
-      border: none;
-      border-radius: 999px;
-      padding: 12px 16px;
-      font-size: 14px;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      z-index: 1000;
+    .quote {
+      font-size: 1.3rem;
+      font-style: italic;
+      margin-top: 20px;
     }
 
-    .profile {
-      position: relative;
-      cursor: pointer;
-    }
-
-    .dropdown {
-      position: absolute;
-      right: 0;
-      top: 40px;
-      background: white;
-      color: black;
-      padding: 10px;
-      display: none;
-      flex-direction: column;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .dropdown a {
-      color: black;
-      text-decoration: none;
-      padding: 8px 12px;
-    }
-
-    .profile:hover .dropdown {
-      display: flex;
+    .why {
+      margin-top: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
     }
 
     footer {
       text-align: center;
       padding: 20px;
+      background-color: rgba(0, 0, 0, 0.2);
       font-size: 0.9rem;
-      background-color: #e2e8f0;
-      color: #334155;
     }
 
-    @media (min-width: 600px) {
-      .cards {
-        flex-direction: row;
-        justify-content: center;
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
       }
 
-      .card {
-        width: 200px;
-      }
-
-      .why-section ul {
-        text-align: center;
+      .quote {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
-<body>
+<body id="body">
 
 <header>
-  <h1>Repoyler</h1>
-  <div class="profile">
-    <i class="fas fa-user-circle fa-2x"></i>
-    <div class="dropdown">
-      <a href="login.html">Login</a>
-      <a href="signup.html">Sign Up</a>
-    </div>
-  </div>
+  <h1>Welcome to Repoyler</h1>
+  <p>Empowering you to learn and grow</p>
 </header>
 
 <nav>
@@ -209,69 +101,32 @@
   <a href="courses.html">Courses</a>
   <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
+  <a href="login.html"><i class="fas fa-user-circle"></i> Profile</a>
 </nav>
 
-<section class="hero">
-  <h2>Learn From The Best</h2>
-  <p>Access high-quality digital courses, anytime, anywhere, and boost your skills today with Repoyler.</p>
-</section>
+<section>
+  <h2>Top Courses Coming Your Way</h2>
+  <p>Explore our best content to upskill and unlock opportunities.</p>
 
-<section class="quote-section">
-  <p>“Success is a formula, not a fantasy.” – Andrew Tate</p>
-</section>
+  <div class="quote">“Success is a formula, not a fantasy.” – Andrew Tate</div>
 
-<section class="features">
-  <h3>What You'll Get</h3>
-  <div class="cards">
-    <div class="card">
-      <i class="fas fa-laptop-code fa-2x"></i>
-      <h4>Practical Courses</h4>
-      <p>Learn by doing with hands-on projects and real-world examples.</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-certificate fa-2x"></i>
-      <h4>Certifications</h4>
-      <p>Earn industry-recognized certificates to showcase your skills.</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-headset fa-2x"></i>
-      <h4>24/7 Support</h4>
-      <p>We're always here to help you when you need us.</p>
-    </div>
+  <div class="why">
+    <h3>Why Repoyler?</h3>
+    <p>We provide high-quality, affordable, and practical courses built by experts for future-ready learners. Join thousands of students growing with Repoyler.</p>
   </div>
-</section>
-
-<section class="why-section">
-  <h3>Why Repoyler?</h3>
-  <ul>
-    <li>🚀 Career-focused content crafted by experts</li>
-    <li>📱 Fully responsive and mobile-ready platform</li>
-    <li>💬 Dedicated community and mentor support</li>
-    <li>🎯 Personalized learning paths for faster growth</li>
-    <li>🛠️ Future-ready tech and continuous updates</li>
-  </ul>
 </section>
 
 <footer>
   &copy; 2025 Repoyler. All rights reserved.
 </footer>
 
-<!-- Theme Toggle -->
-<button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
-
 <script>
-  function toggleTheme() {
-    const current = document.documentElement.getAttribute("data-theme");
-    const next = current === "dark" ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
-  }
-
-  // Load saved theme
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme) {
-    document.documentElement.setAttribute("data-theme", savedTheme);
-  }
+  const colors = ['#0ea5e9', '#3b82f6', '#6366f1', '#10b981', '#f59e0b', '#ef4444'];
+  let i = 0;
+  setInterval(() => {
+    document.getElementById("body").style.backgroundColor = colors[i];
+    i = (i + 1) % colors.length;
+  }, 4000);
 </script>
 
 </body>
