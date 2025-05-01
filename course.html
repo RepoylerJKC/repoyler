@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Courses | Repoyler</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+
+    header {
+      background-color: #0f172a;
+      padding: 20px 40px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .courses-container {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .courses-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #1e3a8a;
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .course-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s;
+    }
+
+    .course-card:hover {
+      transform: scale(1.02);
+    }
+
+    .course-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .course-content {
+      padding: 20px;
+      flex: 1;
+    }
+
+    .course-title {
+      font-size: 1.3rem;
+      margin: 0 0 10px;
+      color: #1e3a8a;
+    }
+
+    .course-price {
+      color: #16a34a;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .enroll-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .enroll-btn:hover {
+      background-color: #1e40af;
+    }
+
+    @media (max-width: 768px) {
+      .courses-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div><strong>Repoyler</strong></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="courses-container">
+  <h1 class="courses-title">Our Popular Courses</h1>
+  <div class="course-grid">
+    
+    <!-- Course 1 -->
+    <div class="course-card">
+      <img src="https://source.unsplash.com/featured/?coding" alt="Web Dev Course">
+      <div class="course-content">
+        <h2 class="course-title">Full-Stack Web Development</h2>
+        <p class="course-price">₹4999</p>
+        <a href="#" class="enroll-btn">Enroll Now</a>
+      </div>
+    </div>
+
+    <!-- Course 2 -->
+    <div class="course-card">
+      <img src="https://source.unsplash.com/featured/?design" alt="UI UX Course">
+      <div class="course-content">
+        <h2 class="course-title">UI/UX Design Masterclass</h2>
+        <p class="course-price">₹3999</p>
+        <a href="#" class="enroll-btn">Enroll Now</a>
+      </div>
+    </div>
+
+    <!-- Course 3 -->
+    <div class="course-card">
+      <img src="https://source.unsplash.com/featured/?marketing" alt="Marketing Course">
+      <div class="course-content">
+        <h2 class="course-title">Digital Marketing Pro</h2>
+        <p class="course-price">₹3499</p>
+        <a href="#" class="enroll-btn">Enroll Now</a>
+      </div>
+    </div>
+
+    <!-- Course 4 -->
+    <div class="course-card">
+      <img src="https://source.unsplash.com/featured/?python" alt="Python Course">
+      <div class="course-content">
+        <h2 class="course-title">Python for Beginners</h2>
+        <p class="course-price">₹2999</p>
+        <a href="#" class="enroll-btn">Enroll Now</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+</body>
+</html>
+<a href="payment.html" class="enroll-btn">Enroll Now</a>

@@ -3,107 +3,245 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Digital Courses</title>
+  <title>Repoyler - Home</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #333;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f3f4f6;
+      color: #1f2937;
     }
+
+    /* Header */
     header {
-      background: #0a192f;
-      color: white;
+      background: #0f172a;
       padding: 20px 40px;
-      text-align: center;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     nav a {
       color: white;
       margin: 0 15px;
       text-decoration: none;
+      font-weight: 500;
     }
-    .hero {
-      padding: 60px 20px;
-      text-align: center;
-      background: #e2e8f0;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-    }
-    .courses {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      padding: 40px 20px;
-    }
-    .course-card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
-    }
-    .course-card:hover {
-      transform: scale(1.02);
-    }
-    .cta {
-      text-align: center;
-      margin: 40px 0;
-    }
-    .cta button {
-      background: #2563eb;
-      color: white;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
+
+    .profile-icon {
+      font-size: 24px;
       cursor: pointer;
     }
-    footer {
-      background: #0a192f;
+
+    .dropdown {
+      position: absolute;
+      top: 70px;
+      right: 40px;
+      display: none;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 10px 20px;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .dropdown a:hover {
+      background-color: #f0f0f0;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 20px;
+      background: linear-gradient(120deg, #2563eb, #1e3a8a);
       color: white;
       text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-btn {
+      padding: 12px 30px;
+      font-size: 1rem;
+      background: white;
+      color: #1e3a8a;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Courses Section */
+    .courses {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .courses h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #1e3a8a;
+    }
+
+    .course-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .course-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
       padding: 20px;
+      transition: transform 0.2s;
+    }
+
+    .course-card:hover {
+      transform: scale(1.03);
+    }
+
+    .course-card i {
+      font-size: 36px;
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    /* About Section */
+    .about {
+      padding: 60px 20px;
+      background: #e5edff;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .cta-btn {
+        padding: 10px 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Your Brand Name</h1>
-    <nav>
-      <a href="#courses">Courses</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <div>
+    <strong>Repoyler</strong>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="profile-icon" onclick="toggleDropdown()">
+    <i class="fas fa-user-circle"></i>
+  </div>
+  <div id="dropdownMenu" class="dropdown">
+    <a href="login.html">Login</a>
+    <a href="signup.html">Sign Up</a>
+  </div>
+</header>
 
-  <section class="hero">
-    <h1>Learn New Skills Online</h1>
-    <p>Join thousands of students learning high-demand skills from industry experts.</p>
-  </section>
+<section class="hero">
+  <h1>Learn Smarter with Repoyler</h1>
+  <p>Top-rated digital courses to boost your career in tech, design, marketing, and more.</p>
+  <a href="courses.html"><button class="cta-btn">Explore Courses</button></a>
+</section>
 
-  <section id="courses" class="courses">
+<section class="courses">
+  <h2>Featured Courses</h2>
+  <div class="course-list">
     <div class="course-card">
-      <h3>Course Title 1</h3>
-      <p>Short description about the course goes here.</p>
-      <div class="cta"><button>Enroll Now</button></div>
+      <i class="fas fa-code"></i>
+      <h3>Web Development</h3>
+      <p>Build full-stack websites from scratch using modern technologies.</p>
     </div>
     <div class="course-card">
-      <h3>Course Title 2</h3>
-      <p>Another short course description here.</p>
-      <div class="cta"><button>Enroll Now</button></div>
+      <i class="fas fa-paint-brush"></i>
+      <h3>UI/UX Design</h3>
+      <p>Master the principles of design and prototyping using Figma & Adobe XD.</p>
     </div>
-    <!-- Add more course cards as needed -->
-  </section>
+    <div class="course-card">
+      <i class="fas fa-chart-line"></i>
+      <h3>Digital Marketing</h3>
+      <p>Grow businesses online using SEO, SEM, and Social Media campaigns.</p>
+    </div>
+  </div>
+</section>
 
-  <section id="contact" class="cta">
-    <h2>Have questions? Contact us!</h2>
-    <button>Get in Touch</button>
-  </section>
+<section class="about">
+  <h2>Why Choose Repoyler?</h2>
+  <p>
+    Repoyler is built by passionate developers and educators who believe in accessible and high-quality online education. Whether you're a beginner or looking to upskill, our curated courses offer real value with lifetime access and expert mentorship.
+  </p>
+</section>
 
-  <footer>
-    <p>&copy; 2025 Your Brand Name. All rights reserved.</p>
-  </footer>
+<footer>
+  <p>&copy; 2025 Repoyler. All rights reserved.</p>
+</footer>
+
+<script>
+  function toggleDropdown() {
+    const dropdown = document.getElementById('dropdownMenu');
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+  }
+
+  window.onclick = function(event) {
+    if (!event.target.closest('.profile-icon') && !event.target.closest('.dropdown')) {
+      document.getElementById('dropdownMenu').style.display = 'none';
+    }
+  };
+</script>
 
 </body>
 </html>
