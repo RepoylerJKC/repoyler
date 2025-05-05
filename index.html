@@ -3,206 +3,216 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Repoyler | Learn and Grow</title>
+  <title>Repoyler | Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    :root {
-      --accent-color: #3d5afe;
-      --text-color: #222;
-    }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: hsl(0, 80%, 95%);
-      transition: background 2s linear;
-      color: var(--text-color);
+    body, html {
+      height: 100%;
+      overflow-x: hidden;
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      color: white;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     header {
-      background-color: var(--accent-color);
-      color: white;
+      background: rgba(0, 0, 0, 0.4);
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
-      z-index: 999;
+      z-index: 1000;
     }
 
-    nav ul {
-      list-style: none;
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    nav {
       display: flex;
       gap: 1rem;
     }
 
-    nav ul li a {
-      color: white;
+    nav a {
       text-decoration: none;
+      color: white;
       font-weight: 500;
+      transition: color 0.3s ease;
     }
 
-    .profile {
-      position: relative;
+    nav a:hover {
+      color: #ffeaa7;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
       cursor: pointer;
     }
 
-    .profile i {
-      font-size: 1.5rem;
-    }
-
-    .dropdown {
-      position: absolute;
-      right: 0;
-      top: 100%;
+    .bar {
+      width: 25px;
+      height: 3px;
       background: white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      padding: 0.5rem;
-      display: none;
-      flex-direction: column;
+      margin: 4px 0;
     }
 
-    .dropdown a {
-      color: var(--text-color);
-      text-decoration: none;
-      padding: 0.3rem 1rem;
+    @media (max-width: 768px) {
+      nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(0,0,0,0.8);
+        display: none;
+        padding: 1rem;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
     }
 
-    .dropdown a:hover {
-      background: #f0f0f0;
-    }
-
-    .profile:hover .dropdown {
-      display: flex;
-    }
-
-    .hero {
-      padding: 3rem 2rem;
+    .container {
+      padding: 2rem;
       text-align: center;
     }
 
-    .hero h1 {
+    .hero h2 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
     }
 
     .hero p {
       font-size: 1.2rem;
-      max-width: 600px;
-      margin: auto;
+      margin-bottom: 1.5rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .buttons a {
+      background: rgba(0,0,0,0.6);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .buttons a:hover {
+      background: rgba(0,0,0,0.8);
     }
 
     .quote {
-      margin: 3rem 0 1rem;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-style: italic;
-      color: #444;
-    }
-
-    .why-section {
-      background: white;
-      padding: 2rem;
-      margin: 2rem auto;
-      max-width: 1000px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .why-section h2 {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    .why-section ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-      line-height: 1.7;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #293241;
-      color: white;
       margin-top: 2rem;
     }
 
-    @media screen and (max-width: 600px) {
-      nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
+    .why-section {
+      margin-top: 2rem;
+      padding: 1rem;
+      background: rgba(0,0,0,0.4);
+      border-radius: 12px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-      .hero h1 {
-        font-size: 2rem;
-      }
+    .why-section h3 {
+      margin-bottom: 0.5rem;
+    }
 
-      .hero p {
-        font-size: 1rem;
-      }
+    .why-section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .why-section li {
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div><strong>Repoyler</strong></div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="profile">
-      <i class="fas fa-user-circle"></i>
-      <div class="dropdown">
-        <a href="login.html">Login</a>
-        <a href="signup.html">Sign Up</a>
-      </div>
-    </div>
-  </header>
+<header>
+  <div class="logo">Repoyler</div>
+  <div class="menu-toggle" id="menuToggle">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+  <nav id="navbar">
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="books.html">Books</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <section class="hero">
-    <h1>Welcome to Repoyler</h1>
-    <p>Your ultimate destination for learning digital skills and career transformation through high-quality courses and resources.</p>
-    <div class="quote">
-      “Success is a formula, not a fantasy.” — Andrew Tate
-    </div>
-  </section>
+<div class="container">
+  <div class="hero">
+    <h2>Welcome to Repoyler</h2>
+    <p>Your one-stop platform for premium digital courses and books.</p>
+  </div>
 
-  <section class="why-section">
-    <h2>Why Repoyler?</h2>
+  <div class="buttons">
+    <a href="courses.html">Explore Courses</a>
+    <a href="books.html">Buy Books</a>
+    <a href="login.html">Login</a>
+    <a href="signup.html">Sign Up</a>
+  </div>
+
+  <div class="quote">
+    “Success is a formula, not a fantasy.” – Andrew Tate
+  </div>
+
+  <div class="why-section">
+    <h3>Why Repoyler?</h3>
     <ul>
-      <li>Expert-led digital courses with practical content</li>
-      <li>Interactive design with intuitive learning experiences</li>
-      <li>Affordable pricing with frequent offers</li>
-      <li>Strong support and regular content updates</li>
-      <li>Built by learners, for learners — we know what works</li>
+      <li>✅ Carefully curated digital courses</li>
+      <li>✅ Motivational and financial books</li>
+      <li>✅ Smooth mobile-first interface</li>
+      <li>✅ Fast support and secure payments</li>
     </ul>
-  </section>
+  </div>
+</div>
 
-  <footer>
-    &copy; 2025 Repoyler. All rights reserved.
-  </footer>
-
-  <script>
-    // Animated background color
-    let hue = 0;
-    setInterval(() => {
-      document.body.style.background = `hsl(${hue}, 80%, 95%)`;
-      hue = (hue + 1) % 360;
-    }, 100);
-  </script>
+<script>
+  const toggleBtn = document.getElementById('menuToggle');
+  const navbar = document.getElementById('navbar');
+  toggleBtn.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+  });
+</script>
 
 </body>
 </html>
