@@ -5,222 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Repoyler | Books</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    :root {
-      --bg-color: #f0f4f8;
-      --text-color: #222;
-      --accent-color: #3d5afe;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
       font-family: 'Poppins', sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
-      transition: background 3s linear;
+      margin: 0;
+      padding: 0;
+      background: #f4f7fa;
     }
 
     header {
-      background-color: var(--accent-color);
-      color: white;
+      background: #3d5afe;
       padding: 1rem 2rem;
+      color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 999;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-    }
-
-    nav ul li a {
+    header nav a {
       color: white;
       text-decoration: none;
-      font-weight: 500;
+      margin-left: 1rem;
     }
 
-    .profile {
-      position: relative;
-      cursor: pointer;
-    }
-
-    .profile i {
-      font-size: 1.5rem;
-    }
-
-    .dropdown {
-      position: absolute;
-      right: 0;
-      top: 100%;
-      background: white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      padding: 0.5rem;
-      display: none;
-      flex-direction: column;
-    }
-
-    .dropdown a {
-      color: var(--text-color);
-      text-decoration: none;
-      padding: 0.3rem 1rem;
-    }
-
-    .dropdown a:hover {
-      background: #f0f0f0;
-    }
-
-    .profile:hover .dropdown {
-      display: flex;
-    }
-
-    .books-section {
+    .container {
       padding: 2rem;
-    }
-
-    .books-section h1 {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    .books-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
+      max-width: 1000px;
+      margin: auto;
     }
 
     .book-card {
-      flex: 1 1 250px;
       background: white;
       padding: 1rem;
       border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .book-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 5px;
+      max-width: 200px;
+      border-radius: 8px;
+      margin-bottom: 1rem;
     }
 
     .book-card h3 {
-      margin: 0.5rem 0;
+      margin-bottom: 0.5rem;
     }
 
     .book-card p {
-      font-weight: bold;
+      margin: 0.2rem 0;
     }
 
     .book-card button {
-      background: var(--accent-color);
+      background: #3d5afe;
       color: white;
       border: none;
-      padding: 0.5rem 1rem;
+      padding: 0.7rem 1.5rem;
+      margin-top: 1rem;
       border-radius: 5px;
       cursor: pointer;
-      margin-top: 0.5rem;
+      font-size: 1rem;
     }
 
     .book-card button:hover {
-      background: #2c44cc;
+      background: #304ffe;
     }
 
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #293241;
-      color: white;
-      margin-top: 2rem;
-    }
-
-    @media screen and (max-width: 600px) {
-      nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-
-      .books-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .book-card img {
-        height: 150px;
+    @media (max-width: 600px) {
+      .book-card {
+        padding: 1rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div><strong>Repoyler</strong></div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="profile">
-      <i class="fas fa-user-circle"></i>
-      <div class="dropdown">
-        <a href="login.html">Login</a>
-        <a href="signup.html">Sign Up</a>
-      </div>
-    </div>
-  </header>
+<header>
+  <div><strong>Repoyler</strong></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="books.html">Books</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <section class="books-section">
-    <h1>Available Books</h1>
-    <div class="books-grid">
-      <div class="book-card">
-        <img src="images/book1.jpg" alt="Book 1">
-        <h3>Python Basics</h3>
-        <p>₹299</p>
-        <button onclick="location.href='payment.html'">Enroll</button>
-      </div>
-      <div class="book-card">
-        <img src="images/book2.jpg" alt="Book 2">
-        <h3>Cybersecurity Guide</h3>
-        <p>₹399</p>
-        <button onclick="location.href='payment.html'">Enroll</button>
-      </div>
-      <div class="book-card">
-        <img src="images/book3.jpg" alt="Book 3">
-        <h3>Full Stack Dev</h3>
-        <p>₹499</p>
-        <button onclick="location.href='payment.html'">Enroll</button>
-      </div>
-    </div>
-  </section>
+<div class="container">
+  <h2 style="text-align:center; margin-bottom: 2rem;">Books Available</h2>
 
-  <footer>
-    &copy; 2025 Repoyler. All rights reserved.
-  </footer>
+  <div class="book-card">
+    <img src="https://via.placeholder.com/200x300?text=Digital+Marketing+Book" alt="Digital Book">
+    <h3>Digital Marketing Mastery</h3>
+    <p>Price: ₹499</p>
+    <button onclick="window.location.href='https://forms.gle/bt6UwQqF5xLS77nW9'">Proceed to Pay</button>
+  </div>
 
-  <script>
-    // Live color changing background (soft hue cycling)
-    let hue = 0;
-    setInterval(() => {
-      document.body.style.background = `hsl(${hue}, 80%, 95%)`;
-      hue = (hue + 1) % 360;
-    }, 100);
-  </script>
+  <!-- Add more books below as needed -->
+</div>
 
 </body>
 </html>
