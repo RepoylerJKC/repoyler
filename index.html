@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Repoyler | Digital Learning</title>
+  <title>Repoyler | Learn and Grow</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     :root {
-      --bg-color: #f0f4f8;
-      --text-color: #222;
       --accent-color: #3d5afe;
+      --text-color: #222;
     }
 
     * {
@@ -21,9 +20,9 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: var(--bg-color);
+      background: hsl(0, 80%, 95%);
+      transition: background 2s linear;
       color: var(--text-color);
-      transition: background 3s linear;
     }
 
     header {
@@ -85,9 +84,8 @@
     }
 
     .hero {
+      padding: 3rem 2rem;
       text-align: center;
-      padding: 4rem 2rem;
-      background: linear-gradient(to right, #e0f7fa, #e1bee7);
     }
 
     .hero h1 {
@@ -97,34 +95,35 @@
 
     .hero p {
       font-size: 1.2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .quote {
+      margin: 3rem 0 1rem;
+      font-size: 1.3rem;
       font-style: italic;
-      color: #333;
+      color: #444;
     }
 
-    .why-repoyler {
+    .why-section {
+      background: white;
       padding: 2rem;
-      background: #fff;
+      margin: 2rem auto;
+      max-width: 1000px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    .why-repoyler h2 {
+    .why-section h2 {
       text-align: center;
       margin-bottom: 1rem;
     }
 
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-    }
-
-    .feature {
-      flex: 1 1 250px;
-      background: #f9f9f9;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      text-align: center;
+    .why-section ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      line-height: 1.7;
     }
 
     footer {
@@ -132,15 +131,21 @@
       padding: 1rem;
       background: #293241;
       color: white;
+      margin-top: 2rem;
     }
 
     @media screen and (max-width: 600px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
       nav ul {
         flex-direction: column;
         gap: 0.5rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
       }
     }
   </style>
@@ -169,28 +174,21 @@
 
   <section class="hero">
     <h1>Welcome to Repoyler</h1>
-    <p>"Success is a formula, not a fantasy." — Andrew Tate</p>
+    <p>Your ultimate destination for learning digital skills and career transformation through high-quality courses and resources.</p>
+    <div class="quote">
+      “Success is a formula, not a fantasy.” — Andrew Tate
+    </div>
   </section>
 
-  <section class="why-repoyler">
+  <section class="why-section">
     <h2>Why Repoyler?</h2>
-    <div class="features">
-      <div class="feature">
-        <i class="fas fa-book-open fa-2x"></i>
-        <h3>Expert Courses</h3>
-        <p>Learn from industry experts with real-world experience.</p>
-      </div>
-      <div class="feature">
-        <i class="fas fa-laptop-code fa-2x"></i>
-        <h3>Modern Platform</h3>
-        <p>Enjoy a smooth, responsive learning experience across devices.</p>
-      </div>
-      <div class="feature">
-        <i class="fas fa-certificate fa-2x"></i>
-        <h3>Certified Programs</h3>
-        <p>Get certificates to showcase your skills professionally.</p>
-      </div>
-    </div>
+    <ul>
+      <li>Expert-led digital courses with practical content</li>
+      <li>Interactive design with intuitive learning experiences</li>
+      <li>Affordable pricing with frequent offers</li>
+      <li>Strong support and regular content updates</li>
+      <li>Built by learners, for learners — we know what works</li>
+    </ul>
   </section>
 
   <footer>
@@ -198,7 +196,7 @@
   </footer>
 
   <script>
-    // Live color changing background (smoothly cycles hues)
+    // Animated background color
     let hue = 0;
     setInterval(() => {
       document.body.style.background = `hsl(${hue}, 80%, 95%)`;
