@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Repoyler | Digital Learning</title>
+  <title>Repoyler | Books</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
@@ -84,47 +84,58 @@
       display: flex;
     }
 
-    .hero {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: linear-gradient(to right, #e0f7fa, #e1bee7);
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      font-style: italic;
-      color: #333;
-    }
-
-    .why-repoyler {
+    .books-section {
       padding: 2rem;
-      background: #fff;
     }
 
-    .why-repoyler h2 {
+    .books-section h1 {
       text-align: center;
       margin-bottom: 1rem;
     }
 
-    .features {
+    .books-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
       justify-content: center;
+      gap: 1rem;
     }
 
-    .feature {
+    .book-card {
       flex: 1 1 250px;
-      background: #f9f9f9;
+      background: white;
       padding: 1rem;
-      border-radius: 10px;
+      border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       text-align: center;
+    }
+
+    .book-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .book-card h3 {
+      margin: 0.5rem 0;
+    }
+
+    .book-card p {
+      font-weight: bold;
+    }
+
+    .book-card button {
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+
+    .book-card button:hover {
+      background: #2c44cc;
     }
 
     footer {
@@ -132,15 +143,22 @@
       padding: 1rem;
       background: #293241;
       color: white;
+      margin-top: 2rem;
     }
 
     @media screen and (max-width: 600px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
       nav ul {
         flex-direction: column;
         gap: 0.5rem;
+      }
+
+      .books-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .book-card img {
+        height: 150px;
       }
     }
   </style>
@@ -167,28 +185,26 @@
     </div>
   </header>
 
-  <section class="hero">
-    <h1>Welcome to Repoyler</h1>
-    <p>"Success is a formula, not a fantasy." — Andrew Tate</p>
-  </section>
-
-  <section class="why-repoyler">
-    <h2>Why Repoyler?</h2>
-    <div class="features">
-      <div class="feature">
-        <i class="fas fa-book-open fa-2x"></i>
-        <h3>Expert Courses</h3>
-        <p>Learn from industry experts with real-world experience.</p>
+  <section class="books-section">
+    <h1>Available Books</h1>
+    <div class="books-grid">
+      <div class="book-card">
+        <img src="images/book1.jpg" alt="Book 1">
+        <h3>Python Basics</h3>
+        <p>₹299</p>
+        <button onclick="location.href='payment.html'">Enroll</button>
       </div>
-      <div class="feature">
-        <i class="fas fa-laptop-code fa-2x"></i>
-        <h3>Modern Platform</h3>
-        <p>Enjoy a smooth, responsive learning experience across devices.</p>
+      <div class="book-card">
+        <img src="images/book2.jpg" alt="Book 2">
+        <h3>Cybersecurity Guide</h3>
+        <p>₹399</p>
+        <button onclick="location.href='payment.html'">Enroll</button>
       </div>
-      <div class="feature">
-        <i class="fas fa-certificate fa-2x"></i>
-        <h3>Certified Programs</h3>
-        <p>Get certificates to showcase your skills professionally.</p>
+      <div class="book-card">
+        <img src="images/book3.jpg" alt="Book 3">
+        <h3>Full Stack Dev</h3>
+        <p>₹499</p>
+        <button onclick="location.href='payment.html'">Enroll</button>
       </div>
     </div>
   </section>
@@ -198,7 +214,7 @@
   </footer>
 
   <script>
-    // Live color changing background (smoothly cycles hues)
+    // Live color changing background (soft hue cycling)
     let hue = 0;
     setInterval(() => {
       document.body.style.background = `hsl(${hue}, 80%, 95%)`;
